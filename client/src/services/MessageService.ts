@@ -7,6 +7,11 @@ export class MessageService {
     const result = await axios.get(API_URL + "/messages");
     return result.data;
   }
+
+  async sendMessage(messageData: Partial<Message>): Promise<Message> {
+    const result = await axios.post(API_URL + "/message", messageData);
+    return result.data;
+  }
 }
 
 const service = new MessageService();

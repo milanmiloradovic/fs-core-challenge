@@ -5,10 +5,7 @@ import com.fs.core.challenge.server.service.MessageService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,6 +23,13 @@ public class MessageController {
         log.info("Received request for all messages");
         List<MessageDto> messages = messageService.getMessages();
         return ResponseEntity.ok(messages);
+    }
+
+    @PostMapping("/message")
+    public ResponseEntity<MessageDto> sendMessage(@RequestBody MessageDto message) {
+        log.info("Received request for new message");
+        messageService.saveNewMessage(message);
+        return ResponseEntity.ok(message);
     }
 
 }

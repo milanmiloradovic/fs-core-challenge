@@ -1,8 +1,13 @@
 import React, { useState } from "react";
+import Message from "../../models/Message";
 
 import "../../styles/input.css";
 
-export default function Input() {
+interface InputProps {
+  onSend: (messageData: Message) => Promise<void>;
+}
+
+export default function Input({ onSend }: InputProps) {
   const [message, setMessage] = useState<string>("");
 
   return (
@@ -13,7 +18,18 @@ export default function Input() {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
-        <button>Send</button>
+        <button
+          onClick={() => {
+            onSend({
+              author: "You",
+              content: message,
+              timestamp: new Date(),
+            });
+            setMessage("");
+          }}
+        >
+          Send
+        </button>
       </div>
     </React.Fragment>
   );

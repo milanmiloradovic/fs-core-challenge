@@ -2,11 +2,11 @@ import React from "react";
 import { useEffect, useState } from "react";
 import Message from "./models/Message";
 import messageService from "./services/MessageService";
-import Layout from "./components/Layout/index";
+import Layout from "src/components/Layout";
 
 import "../src/styles/App.css";
 
-function App() {
+export default function App() {
   const [messages, setMessages] = useState<Message[]>([]);
 
   useEffect(() => {
@@ -24,7 +24,5 @@ function App() {
       });
   };
 
-  return <Layout messages={messages} />;
+  return <Layout messages={messages} getMessages={fetchMessages} />;
 }
-
-export default App;

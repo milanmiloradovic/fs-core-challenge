@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Slf4j
@@ -22,6 +23,15 @@ public class MessageService {
         log.info("Getting all messages...");
         List<MessageEntity> entities = messageRepository.findAllByOrderByTimestampAsc();
         return messageMapper.mapEntityToDto(entities);
+    }
+
+    public void saveNewMessage(MessageDto messageDto) {
+        log.info("Saving new message...");
+        MessageEntity message = new MessageEntity();
+        message.setAuthor(messageDto.author());
+        message.setContent(messageDto.content());
+        message.setTimestamp(LocalDateTime.now());
+        messageRepository.save(message);
     }
 
 }
