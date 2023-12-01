@@ -1,2 +1,60 @@
-# fs-core-challenge
-The challenge for the Fullstack Engineer role
+= The challenge (Fullstack Engineer)
+:imagesdir: etc/images
+:toc:
+
+== Intro
+
+=== Description
+
+A simple chat application which is able to send messages and display messages from all senders.
+
+=== Project structure
+
+====
+ project_root
+   |─ etc
+   |   └─ docker-compose  -- infra for local development
+   |   └─ images          -- images for documentation
+   |─ client              -- frontend application
+   |─ server              -- backend application
+   |─ README.adoc         -- developer readme to get started
+
+====
+
+=== User Interface
+
+image:chat-app.png[Architecture Overview]
+
+=== Prerequisites
+
+The following tool-chain is required:
+
+* Java 17 (Spring Boot 3.2)
+* Maven 3.8.7
+* Yarn 1.22.19
+* React 18.2.0
+* Postgres
+* Docker
+
+
+== Get started
+
+=== Initial setup
+
+Git clone this repository and from the root of `server` folder execute the following command:
+
+Build the application:
+----
+mvn clean install
+----
+
+Second step is to execute the following command from `etc` folder:
+
+----
+docker-compose up
+----
+
+=== Available resources
+
+* http://localhost:3000[Client]
+* http://localhost:8080/api/messages[Server]
