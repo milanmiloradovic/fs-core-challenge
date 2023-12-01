@@ -1,0 +1,25 @@
+.title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  border: 5px solid;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+  .container {
+    max-width: 100%;
+  }
+
+  .chat-container {
+    border-radius: 0;
+  }
+}

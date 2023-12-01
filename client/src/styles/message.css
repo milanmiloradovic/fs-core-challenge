@@ -1,0 +1,46 @@
+.your-message {
+  background-color: #e0e0e0;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  border: 2px solid black;
+}
+
+.your-message .author {
+  color: #888;
+  font-size: 0.8em;
+}
+
+.your-message .timestamp {
+  font-size: 0.8em;
+  color: #888;
+}
+
+.your-message .content {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.message {
+  background-color: #aed581;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+}
+
+.message .author {
+  color: #888;
+  font-size: 0.8em;
+}
+
+.message .timestamp {
+  font-size: 0.8em;
+  color: #888;
+}
+
+.message .content {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
